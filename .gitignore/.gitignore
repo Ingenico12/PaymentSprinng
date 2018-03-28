@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<string.h>
+//-------------------------------------
+struct Example
+{
+  char num1[12];
+  char num2[12];
+}ss;
+//-------------------------------------
+void accept(struct Example *sptr)
+{
+  int i;
+
+  for(i=0;i<3;i++)
+  {
+       const char *v="234";
+       printf("size=%d size=%d", sizeof(sptr->num1),sizeof(sptr[i].num1) );
+memcpy(sptr[i].num1, v, sizeof(sptr->num1));
+if(1){
+  const char *v="123";
+memcpy(sptr[i].num2, v, sizeof(sptr->num2));
+}
+if(1){
+  const char *v="523";
+memcpy(sptr[i].num2, v, sizeof(sptr->num2));
+}
+}
+}
+//-------------------------------------
+void print(struct Example *sptr)
+{
+  int i;
+  for(i=0;i<3;i++)
+  {
+  printf("\nNum1 : %s",sptr[i].num1);
+  printf("\nNum2 : %s",sptr[i].num2);
+  }
+}
+//-------------------------------------
+void main()
+{
+int i;
+struct ss *s=(struct ss *)malloc(sizeof(s));
+accept(s);
+print(s);
+
+}
